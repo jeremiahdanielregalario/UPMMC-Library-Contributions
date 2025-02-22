@@ -128,6 +128,11 @@ set math.mat(delim: "[")
   #x
 ]
 
+#let cent(x) = {
+  set align(center)
+  [#x]
+}
+
 #let points(x) = [#hfill #if x == 1 [_(#x point)_] else [_(#x points)_]]
 
 #let pts(x) = [#points(x)]
