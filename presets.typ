@@ -79,6 +79,14 @@ set math.mat(delim: "[")
     content
 }
 
+#let itemsI(
+  content
+) = {
+    set enum(numbering: "I.")
+
+    content
+}
+
 #let hfill = h(1fr)
 
 #let hrule = line(length: 100%)
@@ -136,10 +144,6 @@ set math.mat(delim: "[")
 
 #let answer(x) = block(stroke: 0.75pt, radius: 5pt, inset: 10pt, width: 100%)[#x]
 
-#let blank(n) = {
-  for i in range(n) [\_]
-}
-
 // General Math
 
 #let contra = $arrow.zigzag$
@@ -164,6 +168,9 @@ set math.mat(delim: "[")
 
 #let gif(x) = $lr(bracket.double.l #x bracket.double.r)$
 #let int = $integral$
+
+#let cdots = $dots.c$
+#let vdots = $dots.v$
 
 
 // Set Theory
@@ -306,7 +313,7 @@ set math.mat(delim: "[")
 
 #let Union = $display(union.big)$
 
-#let Sect = $display(sect.big)$
+#let Sect = $display(inter.big)$
 
 #let Cl = $op("Cl")$
 
@@ -391,9 +398,17 @@ set math.mat(delim: "[")
 
 
 
+
+
 // Number Theory
 
 #let lcm = $op("lcm")$
-#let pmod(m) = $sp (mod #m)$
-#let ord = $op("ord", limits: #true)$
 
+
+// Abstract Math
+#let P1 = $P_1$
+#let P2 = $P_2$
+#let P3 = $P_3$
+#let Q1 = $Q_1$
+#let Q2 = $Q_2$
+#let implies = $==>$
