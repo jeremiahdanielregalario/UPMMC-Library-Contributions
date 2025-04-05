@@ -47,6 +47,11 @@ set math.mat(delim: "[")
   [#content]
 }
 
+#let scr(it) = text(
+  features: ("ss01",),
+  box($cal(it)$),
+)
+
 #let ender = {
   align(center)[
     \*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*
@@ -158,7 +163,7 @@ set math.mat(delim: "[")
 #let neq = $eq.not$
 #let subs = $subset.eq$
 #let  nsub = $subset.eq.not$
-
+#let univ = $cal(U)$
 #let sups = $supset.eq$
 #let disp(x) = $display(#x)$
 #let alp = $alpha$
@@ -221,6 +226,9 @@ set math.mat(delim: "[")
 #let (y1, y2, y3, y0, yn) = ($y_1$, $y_2$, $y_3$, $y_0$, $y_n$)
 
 #let (z1, z2, z3, z0, zn) = ($z_1$, $z_2$, $z_3$, $z_0$, $z_n$)
+
+
+#let (r1, r2, r3, r0, rn) = ($r_1$, $r_2$, $r_3$, $r_0$, $r_n$)
 
 
 
@@ -318,7 +326,7 @@ set math.mat(delim: "[")
 
 #let Union = $display(union.big)$
 
-#let Sect = $display(inter.big)$
+#let Inter = $display(inter.big)$
 
 #let Cl = $op("Cl")$
 
@@ -394,16 +402,28 @@ set math.mat(delim: "[")
 
 #let Exp = $op("Exp")$
 
+#let unif = $op("U")$
+
+#let Be = $op("Be")$
+
+#let Ge = $op("Ge")$
+
+#let NB = $op("NB")$
+
+#let HG = $op("HG")$
+
 
 
 // Projective Geometry
 
 #let lines = $Lambda$
+#let persp(x) = $disp(attach(overline(and), tr: "", t: #x))$
+#let projec = $overline(and)$
 
+#let PG = $op("PG")$
 
-
-
-
+#let quadra = $colon.double$
+#let quadri = $square.small$
 
 // Number Theory
 
@@ -417,3 +437,8 @@ set math.mat(delim: "[")
 #let Q1 = $Q_1$
 #let Q2 = $Q_2$
 #let implies = $==>$
+
+// Physics
+
+#let ivec = $hat(i)$
+#let jvec = $hat(j)$
