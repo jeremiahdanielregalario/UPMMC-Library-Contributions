@@ -47,6 +47,11 @@ set math.mat(delim: "[")
   [#content]
 }
 
+#let cent(content) = {
+  set align(center)
+  block(content)
+}
+
 #let scr(it) = text(
   features: ("ss01",),
   box($cal(it)$),
@@ -270,7 +275,9 @@ set math.mat(delim: "[")
 #let adj = $op("adj")$
 
 #let detmat = math.mat.with(delim: "|")
-
+#let bmat = math.mat.with(delim: "[")
+#let vmat = math.mat.with(delim: "|")
+#let bvec = math.vec.with(delim: "[")
 
 
 
@@ -293,6 +300,8 @@ set math.mat(delim: "[")
 #let GF = $op("GF")$
 
 #let Gal = $op("Gal")$
+
+#let char = $op("char")$
 
 
 
@@ -420,7 +429,7 @@ set math.mat(delim: "[")
 #let persp(x) = $disp(attach(overline(and), tr: "", t: #x))$
 #let projec = $overline(and)$
 
-#let PG = $op("PG")$
+#let PG = $P G$
 
 #let quadra = $colon.double$
 #let quadri = $square.small$
@@ -442,3 +451,16 @@ set math.mat(delim: "[")
 
 #let ivec = $hat(i)$
 #let jvec = $hat(j)$
+
+// Graph Theory
+
+#let comple(x) = $conj(#x)$
+
+#let rad = $op("rad")$
+
+#let diam = $op("diam")$
+
+
+// Numerical Analysis
+
+#let fl = $op("fl")$
