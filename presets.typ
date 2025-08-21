@@ -107,34 +107,34 @@ set math.mat(delim: "[")
 #let boxed(content) = block(stroke: 0.5pt, inset: 0.5em)[$display(#content)$]
 
 
-#let def(x) = box(width: 100%, stroke: 1pt, inset: 1em, radius: 0.5em)[
+#let def(x) = block(width: 100%, stroke: 1pt, inset: 1em, radius: 0.5em)[
   *#underline[Definition:]* #x
 ]
 
-#let thm(n, x) = box(width: 100%, stroke: 1pt, inset: 1em, radius: 0.5em)[
+#let thm(n, x) = block(width: 100%, stroke: 1pt, inset: 1em, radius: 0.5em)[
   *#underline[Theorem #n:]* #x
 ]
 
-#let cor(n, x) = box(width: 100%, stroke: 1pt, inset: 1em, radius: 0.5em)[
+#let cor(n, x) = block(width: 100%, stroke: 1pt, inset: 1em, radius: 0.5em)[
   *#underline[Corollary #n:]* #x
 ]
 
-#let lemma(n, x) = box(width: 100%, stroke: 1pt, inset: 1em, radius: 0.5em)[
+#let lemma(n, x) = block(width: 100%, stroke: 1pt, inset: 1em, radius: 0.5em)[
   *#underline[Lemma #n:]* #x
 ]
 
 #let recall(x) = block(width: 100%)[
     #set align(center)
-    #box(width: 80%, stroke: (dash: "dashed"), inset: 1em, radius: 0.2em)[ #set align(left)
+    #block(width: 80%, stroke: (dash: "dashed"), inset: 1em, radius: 0.2em)[ #set align(left)
       *#underline[Recall:]* #x
     ]
 ]
 
-#let proof(x) = box(width: 100%, stroke: 0.75pt, inset: 1em, radius: 0.5em)[
+#let proof(x) = block(width: 100%, stroke: 0.75pt, inset: 1em, radius: 0.5em)[
   #underline[_Proof_:] #x
 ]
 
-#let cont(x) = box(width: 100%, stroke: 0.75pt, inset: 1em, radius: 0.5em)[
+#let cont(x) = block(width: 100%, stroke: 0.75pt, inset: 1em, radius: 0.5em)[
   #x
 ]
 
@@ -258,6 +258,11 @@ set math.mat(delim: "[")
 // Real Analysis
 
 #let pderiv(y, x) = $disp(frac(partial #y, partial #x))$
+
+
+#let pd(x) = $partial_#x$
+
+#let ess = $op("ess")$
 
 
 // Linear Algebra
@@ -464,3 +469,31 @@ set math.mat(delim: "[")
 // Numerical Analysis
 
 #let fl = $op("fl")$
+
+#let cond = $op("cond")$
+
+#let esti(x) = $accent(#x, tilde)$
+
+#let avec(x) = $arrow(#x)$
+#let vvec = $arrow(v)$
+
+// Real Analysis
+
+#let  meas = $m^*$
+
+#let dom = $op("dom")$
+#let ran = $op("ran")$
+
+
+
+// Vector Calculus
+
+#let vecx = $bold("x")$
+
+#let vecb(x) = $upright(bold(#x))$
+
+#let curl = $op("curl")$
+
+#let Div = $op("div")$
+
+#let nvec = $bold(upright(hat(n)))$
